@@ -15,9 +15,9 @@ small and dependency-free so the team can maintain them directly in GitHub.
 4. The Pages workflow rebuilds the static dashboard from that commit. The
    browser loads the CSV and renders the agenda and progress cards.
 
-The six starter columns are `Person 1` through `Person 6`. Replace those column
-names with real names if desired; the parser and dashboard discover learner
-columns automatically as every column after the six agenda columns.
+The six learner columns are `Vasudha`, `Lakhsmi`, `Pragna`, `Navya`, `Sreenu`,
+and `Uday`. The parser and dashboard discover learner columns automatically as
+every column after the six agenda columns.
 
 ## Issue comment syntax
 
@@ -25,13 +25,13 @@ Use an exact topic name from the CSV or a day number, then one or more
 `person-status` updates separated by commas:
 
 ```text
-Day 1, person1-inprogress, person2-done
-JSON and CSV data, p3-blocked
+Day 1, Vasudha-inprogress, Lakhsmi-done
+JSON and CSV data, Pragna-blocked
 ```
 
-Person names are case-insensitive. `person1` and `p1` both resolve to
-`Person 1`; display names such as `Person 4` are also accepted. The supported
-statuses and common aliases are:
+Learner names are case-insensitive. The display names above are recommended;
+positional aliases such as `person1` and `p1` remain supported, so `p1` still
+resolves to `Vasudha`. The supported statuses and common aliases are:
 
 | Canonical status | Accepted examples |
 | --- | --- |
@@ -80,7 +80,7 @@ Run the status parser locally with:
 
 ```bash
 python scripts/update_status.py \
-  --comment "Day 1, person1-inprogress, person2-done"
+  --comment "Day 1, Vasudha-inprogress, Lakhsmi-done"
 ```
 
 The test suite uses only Python's standard library:

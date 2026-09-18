@@ -54,6 +54,22 @@ def write_csv(path: Path) -> None:
 
 
 class UpdateStatusTests(unittest.TestCase):
+    def test_resolves_named_learners_and_positional_aliases(self):
+        fieldnames = FIELDNAMES[:6] + [
+            "Vasudha",
+            "Lakhsmi",
+            "Pragna",
+        ]
+        command = parse_status_comment(
+            "Day 1, Vasudha-done, p2-inprogress, Pragna-blocked",
+            fieldnames,
+        )
+        self.assertIsNotNone(command)
+        self.assertEqual(
+            command.updates,
+            {"Vasudha": "done", "Lakhsmi": "in-progress", "Pragna": "blocked"},
+        )
+
     def test_parses_person_and_status_aliases(self):
         command = parse_status_comment(
             "Day 1, p1-inprogress, Person 2: complete",

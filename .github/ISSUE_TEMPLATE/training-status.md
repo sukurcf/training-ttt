@@ -10,7 +10,7 @@ Use this issue as the shared training status board. Comment with an exact topic
 or `Day N`, followed by one or more learner updates:
 
 ```text
-Day 1, person1-inprogress, person2-done
+Day 1, Vasudha-inprogress, Lakhsmi-done
 ```
 
 Accepted statuses:
@@ -20,6 +20,6 @@ Accepted statuses:
 - `done`
 - `blocked`
 
-The automation accepts `person1` / `p1` and the display names in
-`data/training.csv`. It updates the CSV and GitHub Pages dashboard after a
-valid comment.
+The automation accepts `person1` / `p1`, positional aliases for each learner,
+and the display names in `data/training.csv`. It updates the CSV and GitHub
+Pages dashboard after a valid comment.

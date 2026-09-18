@@ -98,7 +98,12 @@ def _person_aliases(header: str) -> set[str]:
 
 def _resolve_person(raw_name: str, columns: Sequence[str]) -> str:
     wanted = _normalize_identifier(raw_name)
-    matches = [column for column in columns if wanted in _person_aliases(column)]
+    matches = [
+        column
+        for index, column in enumerate(columns, start=1)
+        if wanted in _person_aliases(column)
+        or wanted in {f"person{index}", f"p{index}"}
+    ]
     if len(matches) == 1:
         return matches[0]
     if len(matches) > 1:
