@@ -15,7 +15,7 @@ small and dependency-free so the team can maintain them directly in GitHub.
 4. The Pages workflow rebuilds the static dashboard from that commit. The
    browser loads the CSV and renders the agenda and progress cards.
 
-The six learner columns are `Vasudha`, `Lakhsmi`, `Pragna`, `Navya`, `Sreenu`,
+The six learner columns are `Vasudha`, `Lakshmi`, `Pragna`, `Navya`, `Sreenu`,
 and `Uday`. The parser and dashboard discover learner columns automatically as
 every column after the six agenda columns.
 
@@ -25,7 +25,7 @@ Use an exact topic name from the CSV or a day number, then one or more
 `person-status` updates separated by commas:
 
 ```text
-Day 1, Vasudha-inprogress, Lakhsmi-done
+Day 1, Vasudha-inprogress, Lakshmi-done
 JSON and CSV data, Pragna-blocked
 ```
 
@@ -83,7 +83,7 @@ Run the status parser locally with:
 
 ```bash
 python scripts/update_status.py \
-  --comment "Day 1, Vasudha-inprogress, Lakhsmi-done"
+   --comment "Day 1, Vasudha-inprogress, Lakshmi-done"
 ```
 
 The test suite uses only Python's standard library:

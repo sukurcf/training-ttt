@@ -10,7 +10,7 @@ Use this issue as the shared training status board. Comment with an exact topic
 or `Day N`, followed by one or more learner updates:
 
 ```text
-Day 1, Vasudha-inprogress, Lakhsmi-done
+Day 1, Vasudha-inprogress, Lakshmi-done
 ```
 
 Accepted statuses:

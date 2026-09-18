@@ -57,7 +57,7 @@ class UpdateStatusTests(unittest.TestCase):
     def test_resolves_named_learners_and_positional_aliases(self):
         fieldnames = FIELDNAMES[:6] + [
             "Vasudha",
-            "Lakhsmi",
+            "Lakshmi",
             "Pragna",
         ]
         command = parse_status_comment(
@@ -67,7 +67,7 @@ class UpdateStatusTests(unittest.TestCase):
         self.assertIsNotNone(command)
         self.assertEqual(
             command.updates,
-            {"Vasudha": "done", "Lakhsmi": "in-progress", "Pragna": "blocked"},
+            {"Vasudha": "done", "Lakshmi": "in-progress", "Pragna": "blocked"},
         )
 
     def test_parses_person_and_status_aliases(self):
