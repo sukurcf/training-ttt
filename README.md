@@ -55,7 +55,10 @@ The two workflows are:
 
 - [`update-training-status.yml`](.github/workflows/update-training-status.yml)
   listens for created and edited issue comments, ignores pull-request
-  comments, and commits only `data/training.csv`.
+  comments, commits only `data/training.csv`, and explicitly dispatches the
+  Pages deployment after a status change. The explicit dispatch is required
+  because GitHub does not start a second `push` workflow for commits made with
+  `GITHUB_TOKEN`.
 - [`pages.yml`](.github/workflows/pages.yml) deploys the root static site to
   GitHub Pages whenever `main` changes.
 
