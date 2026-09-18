@@ -258,9 +258,19 @@ function renderAgenda() {
     .join("");
 }
 
+function renderPersonFilter() {
+  const personFilter = document.querySelector("#person-filter");
+  const options = [
+    new Option("All learners", "all"),
+    ...state.people.map((person) => new Option(person, person)),
+  ];
+  personFilter.replaceChildren(...options);
+}
+
 function render() {
   renderStats();
   renderLearners();
+  renderPersonFilter();
   renderAgenda();
 }
 
