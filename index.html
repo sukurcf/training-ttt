@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A 30-day Python training agenda and progress tracker for six learners.">
+    <title>Python training tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="./" aria-label="Python training tracker home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Python training tracker</span>
+        </a>
+        <span class="header-note">30-day learning sprint</span>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">IssueOps learning board</p>
+          <h1 id="page-title">Learn Python by building useful things.</h1>
+          <p class="hero-text">
+            Follow the agenda day by day, practice each concept, and update learner
+            progress by commenting on the tracking issue.
+          </p>
+          <p class="data-note" id="data-note">Loading agenda data&hellip;</p>
+        </div>
+        <div class="hero-callout">
+          <span class="callout-label">Comment format</span>
+          <code>Day 1, person1-inprogress, person2-done</code>
+          <span class="callout-help">The latest valid comment is reflected here automatically.</span>
+        </div>
+      </section>
+
+      <section class="stats-grid" id="stats" aria-label="Training summary">
+        <div class="loading-card">Loading summary&hellip;</div>
+      </section>
+
+      <section class="panel" aria-labelledby="learners-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">At a glance</p>
+            <h2 id="learners-heading">Learner progress</h2>
+          </div>
+          <span class="section-meta" id="learner-meta"></span>
+        </div>
+        <div class="learner-grid" id="learner-overview">
+          <div class="loading-card">Loading learners&hellip;</div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="agenda-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The plan</p>
+            <h2 id="agenda-heading">30-day agenda</h2>
+          </div>
+          <span class="section-meta" id="agenda-meta"></span>
+        </div>
+
+        <div class="toolbar" aria-label="Agenda filters">
+          <label class="field field-search">
+            <span>Search the agenda</span>
+            <input id="search" type="search" placeholder="Try files, APIs, testing&hellip;">
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="status-filter">
+              <option value="all">All statuses</option>
+              <option value="not-started">Not started</option>
+              <option value="in-progress">In progress</option>
+              <option value="done">Done</option>
+              <option value="blocked">Blocked</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Learner</span>
+            <select id="person-filter">
+              <option value="all">All learners</option>
+            </select>
+          </label>
+          <button class="button button-secondary" id="reset-filters" type="button">Reset filters</button>
+        </div>
+
+        <div class="legend" aria-label="Status legend">
+          <span><i class="status-dot status-not-started" aria-hidden="true"></i>Not started</span>
+          <span><i class="status-dot status-in-progress" aria-hidden="true"></i>In progress</span>
+          <span><i class="status-dot status-done" aria-hidden="true"></i>Done</span>
+          <span><i class="status-dot status-blocked" aria-hidden="true"></i>Blocked</span>
+        </div>
+
+        <div class="agenda-list" id="agenda-list">
+          <div class="loading-card">Loading agenda&hellip;</div>
+        </div>
+      </section>
+
+      <section class="help-grid">
+        <article class="panel help-card">
+          <p class="eyebrow">How to update</p>
+          <h2>Use the training issue</h2>
+          <p>
+            Comment with an exact topic or a day number, followed by one or more
+            learner updates. For example:
+          </p>
+          <pre><code>JSON and CSV data, person1-done, person3-inprogress</code></pre>
+          <p class="muted">
+            Accepted statuses: <strong>not-started</strong>, <strong>in-progress</strong>,
+            <strong>done</strong>, and <strong>blocked</strong>. Short forms such as
+            <strong>inprogress</strong> and <strong>p1</strong> are accepted too.
+          </p>
+        </article>
+        <article class="panel help-card">
+          <p class="eyebrow">Learning rhythm</p>
+          <h2>Small loop, every day</h2>
+          <ol class="rhythm-list">
+            <li><span>01</span><div><strong>Learn</strong><small>Read the focus and example.</small></div></li>
+            <li><span>02</span><div><strong>Build</strong><small>Complete the hands-on practice.</small></div></li>
+            <li><span>03</span><div><strong>Share</strong><small>Discuss the result and update the issue.</small></div></li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>Python training tracker</span>
+        <span>CSV-backed GitHub Pages dashboard</span>
+      </div>
+    </footer>
+  </body>
+</html>
